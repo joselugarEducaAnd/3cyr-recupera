@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4 (qmd-a-elpx)">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enseña a la máquina</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Recupera Computación y Robótica de 3.º">
+<script>document.querySelector("html").classList.add("js");</script>
+<script src="../libs/jquery/jquery.min.js"> </script>
+<script src="../libs/common_i18n.js"> </script>
+<script src="../libs/common.js"> </script>
+<script src="../libs/exe_export.js"> </script>
+<script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script>
+<link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<link rel="stylesheet" href="../content/css/base.css">
+<script src="../theme/style.js"> </script>
+<link rel="stylesheet" href="../theme/style.css">
+<link rel="stylesheet" href="../theme/zzz-majuelo.css">
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><nav id="siteNav"><ul>
+<li class=""><a href="../index.html" class=" main-node no-ch">Bienvenida</a></li>
+<li class=""><a href="../html/mi-guia-de-supervivencia-digital.html" class=" no-ch">Mi guía de supervivencia digital</a></li>
+<li class=""><a href="../html/mi-primer-sistema-automatico.html" class=" no-ch">Mi primer sistema automático</a></li>
+<li class="active"><a href="../html/ensena-a-la-maquina.html" class="active no-ch">Enseña a la máquina</a></li>
+</ul></nav><main id="page-ensena-a-la-maquina" class="page">
+<header class="main-header">
+<div class="package-header"><p class="package-title">Recupera Computación y Robótica de 3.º</p></div>
+<div class="page-header"><h1 class="page-title">Enseña a la máquina</h1></div>
+</header>
+<div id="page-content-page-ensena-a-la-maquina" class="page-content">
+<article class="box no-header"><div class="box-content">
+<div class="idevice_node text" data-idevice-type="text"><p><strong>Tarea 3 de 3.</strong> Se entrega en Classroom, en la tarea «Tarea 3 · Enseña a la máquina».</p>
+<div class="marco marco-teoria"><p class="marco-titulo">Qué vas a hacer</p>
+<p>Vas a enseñar a un ordenador a distinguir <strong>mensajes trampa</strong> (los que intentan engañarte, como los que viste en la tarea 1) de <strong>mensajes normales</strong>. No le vas a dar reglas: le darás <strong>ejemplos</strong>, y él aprenderá a partir de ellos. Así funciona el aprendizaje automático, la base de muchas inteligencias artificiales.</p>
+<ul>
+<li><strong>Tiempo:</strong> unas 3 o 4 horas, en varios ratos si quieres.</li>
+<li><strong>Qué necesitas:</strong> un ordenador con internet. Usarás <strong>LearningML</strong>, que funciona en el navegador, sin cuenta y sin cámara.</li>
+<li><strong>Qué entregas:</strong> el documento de la tarea de Classroom, con dos capturas, una tabla de pruebas y tres respuestas.</li>
+</ul></div>
+<div class="marco marco-teoria"><p class="marco-titulo">Las tres fases de una máquina que aprende</p>
+<ol>
+<li><strong>Entrenamiento:</strong> le das muchos ejemplos ya clasificados («esto es trampa», «esto es normal»).</li>
+<li><strong>Aprendizaje:</strong> el programa busca en esos ejemplos lo que se repite en cada grupo.</li>
+<li><strong>Prueba:</strong> le das mensajes nuevos, que no ha visto nunca, y comprobamos si acierta.</li>
+</ol></div>
+<h2>Paso a paso</h2>
+<h3>Paso 1 · Abre LearningML</h3>
+<ol>
+<li>Abre el <a href="https://learningml.org/lml-editor/?locale=es" rel="noopener" target="_blank">editor de LearningML</a>. Se abre en español.</li>
+<li>Pulsa la tarjeta <strong>«Reconocimiento de textos»</strong>.</li>
+<li>En el cuadro <strong>«Nombre del modelo»</strong> de la barra de arriba, escribe <code>mensajes</code>.</li>
+</ol>
+<p>La pantalla tiene tres zonas, que son las tres fases: <strong>Entrenamiento</strong>, <strong>Aprender</strong> y <strong>Probar</strong>.</p>
+<h3>Paso 2 · Crea las dos clases</h3>
+<p>Una <strong>clase</strong> es cada grupo en el que la máquina tiene que clasificar los mensajes.</p>
+<ol>
+<li>En la zona Entrenamiento, escribe <code>trampa</code> en <strong>«Nombre de nueva clase»</strong> y pulsa <strong>«Añadir nueva clase»</strong>.</li>
+<li>Repite con <code>normal</code>.</li>
+</ol>
+<h3>Paso 3 · Escribe los ejemplos</h3>
+<ol>
+<li>En la clase <strong>trampa</strong>, pulsa <strong>«Añadir»</strong>. Se abre la ventana «Añadir uno o más ejemplos de texto».</li>
+<li>Escribe <strong>un mensaje por línea</strong> (pulsa Intro entre uno y otro) y pulsa <strong>«Añadir ejemplos de texto»</strong>.</li>
+<li>Haz lo mismo en la clase <strong>normal</strong>.</li>
+</ol>
+<p>Pon <strong>al menos 10 ejemplos en cada clase</strong>, inventados por ti. Ideas:</p>
+<ul>
+<li><strong>trampa:</strong> premios que no has pedido, prisa y amenazas, que te pidan contraseñas o códigos, pagos raros para recibir un paquete…</li>
+<li><strong>normal:</strong> mensajes de tus amigos, de tu familia, de clase, de tu equipo…</li>
+</ul>
+<p>Cuanto más variados sean los ejemplos, mejor aprenderá.</p>
+<h3>Paso 4 · Que aprenda</h3>
+<p>En la zona Aprender, pulsa <strong>«Aprender a reconocer textos»</strong>. Tarda unos segundos; cuando acabe, te dirá cuánto ha tardado en construirse el modelo.</p>
+<h3>Paso 5 · Pruébalo con mensajes nuevos</h3>
+<ol>
+<li>En la zona Probar, escribe un mensaje <strong>nuevo</strong>, que no esté entre tus ejemplos.</li>
+<li>Pulsa <strong>«Comprobar»</strong>. Verás el <strong>porcentaje de confianza</strong> de cada clase.</li>
+<li>Haz <strong>4 pruebas</strong>, dos con mensajes trampa y dos normales, y apunta los resultados en la tabla del documento.</li>
+</ol>
+<p>Así queda la pantalla (con unos pocos ejemplos; tú pon al menos 10 por clase y <strong>escribe los tuyos</strong>, no copies estos):</p>
+<p style="text-align:center"><img alt="LearningML con dos clases, normal y trampa, con sus ejemplos de texto; en Aprender, el aviso de que el modelo ya está construido; y en Probar, un mensaje sobre un premio clasificado como trampa con un 70 por ciento de confianza." src="../content/resources/cap_lml_texto.png"/></p>
+<p style="text-align:center"><a href="../content/resources/cap_lml_texto.png" rel="noopener" target="_blank">Ampliar imagen (nueva pestaña)</a></p>
+<div class="marco marco-nota"><p class="marco-titulo">Cómo leer la confianza</p>
+<p>El modelo nunca dice «esto es trampa». Dice «estoy un 70 % seguro de que es trampa».</p>
+<ul>
+<li><strong>Más del 80 %:</strong> lo tiene claro.</li>
+<li><strong>Entre el 60 % y el 80 %:</strong> va justo.</li>
+<li><strong>Menos del 60 %:</strong> está adivinando.</li>
+</ul>
+<p>Si duda o se equivoca, añade más ejemplos parecidos al mensaje que falló y vuelve a pulsar «Aprender a reconocer textos». ¡Eso es entrenar mejor a una máquina!</p></div>
+<h3>Paso 6 · Haz las dos capturas</h3>
+<ol>
+<li>La zona <strong>Entrenamiento</strong> con tus dos clases y sus ejemplos.</li>
+<li>Una <strong>prueba</strong> en la zona Probar, con sus porcentajes.</li>
+</ol>
+<div class="marco marco-nota"><p class="marco-titulo">¡Ojo! LearningML no guarda tu trabajo</p>
+<p>Si cierras la pestaña, se pierden tus ejemplos. Si vas a dejarlo a medias, usa <em>Archivo → «Guardar conjunto de datos en tu ordenador»</em>. Otro día, recupéralo con <em>Archivo → «Subir conjunto de datos desde tu ordenador»</em> y vuelve a pulsar «Aprender a reconocer textos».</p></div>
+<h2>Cómo entregar</h2>
+<ol>
+<li>Entra en Google Classroom, en la clase de la recuperación, y abre la tarea <strong>«Tarea 3 · Enseña a la máquina»</strong>.</li>
+<li>Abre el documento que trae la tarea: ya es tu copia.</li>
+<li>Pega las dos capturas (<em>Insertar → Imagen → Subir desde el ordenador</em>), rellena la tabla de pruebas y responde a las tres preguntas.</li>
+<li>Pulsa «Entregar».</li>
+</ol>
+<p>Después recibirás comentarios. Si quieres mejorar tu trabajo, puedes hacerlo mientras la tarea siga abierta: pulsa «Anular entrega», cambia lo que haga falta y vuelve a pulsar «Entregar».</p>
+<p>¿Tienes dudas? Escríbelas en un <strong>comentario privado</strong> dentro de la tarea.</p>
+<h2>Cómo se califica</h2>
+<p>Esta tarea cuenta para un aprendizaje, con su nota de 0 a 10.</p>
+<table class="tabla-datos">
+<thead><tr><th>Aprendizaje</th><th>En qué se fija quien corrige</th></tr></thead>
+<tbody>
+<tr><td><strong>Entender cómo aprende una máquina</strong></td><td>Tu modelo tiene dos clases con al menos 10 ejemplos propios en cada una.<br/>Las 4 pruebas están apuntadas con su porcentaje.<br/>Explicas que la máquina aprende de ejemplos, no de reglas.<br/>Explicas por qué falla o duda y cómo lo mejorarías, y piensas en lo que podría salir mal si una máquina decidiera sola.</td></tr>
+</tbody>
+</table></div>
+</div></article>
+</div></main>
+<div class="nav-buttons"><a href="mi-primer-sistema-automatico.html" class="nav-button nav-button-left"><span>Anterior</span></a><span class="nav-button nav-button-right" aria-hidden="true"><span>Siguiente</span></span></div>
+<footer id="siteFooter"><div id="siteFooterContent">
+<div id="packageLicense" class="cc cc-by-sa"><p><span class="license-label">Licencia: </span>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">Creative Commons: Reconocimiento - compartir igual 4.0</a></p></div>
+</div></footer>
+</div>
+</body></html>

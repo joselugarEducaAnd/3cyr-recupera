@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4 (qmd-a-elpx)">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi primer sistema automático</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Recupera Computación y Robótica de 3.º">
+<script>document.querySelector("html").classList.add("js");</script>
+<script src="../libs/jquery/jquery.min.js"> </script>
+<script src="../libs/common_i18n.js"> </script>
+<script src="../libs/common.js"> </script>
+<script src="../libs/exe_export.js"> </script>
+<script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script>
+<link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<link rel="stylesheet" href="../content/css/base.css">
+<script src="../theme/style.js"> </script>
+<link rel="stylesheet" href="../theme/style.css">
+<link rel="stylesheet" href="../theme/zzz-majuelo.css">
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><nav id="siteNav"><ul>
+<li class=""><a href="../index.html" class=" main-node no-ch">Bienvenida</a></li>
+<li class=""><a href="../html/mi-guia-de-supervivencia-digital.html" class=" no-ch">Mi guía de supervivencia digital</a></li>
+<li class="active"><a href="../html/mi-primer-sistema-automatico.html" class="active no-ch">Mi primer sistema automático</a></li>
+<li class=""><a href="../html/ensena-a-la-maquina.html" class=" no-ch">Enseña a la máquina</a></li>
+</ul></nav><main id="page-mi-primer-sistema-automatico" class="page">
+<header class="main-header">
+<div class="package-header"><p class="package-title">Recupera Computación y Robótica de 3.º</p></div>
+<div class="page-header"><h1 class="page-title">Mi primer sistema automático</h1></div>
+</header>
+<div id="page-content-page-mi-primer-sistema-automatico" class="page-content">
+<article class="box no-header"><div class="box-content">
+<div class="idevice_node text" data-idevice-type="text"><p><strong>Tarea 2 de 3.</strong> Se entrega en Classroom, en la tarea «Tarea 2 · Mi primer sistema automático».</p>
+<div class="marco marco-teoria"><p class="marco-titulo">Qué vas a hacer</p>
+<p>Vas a montar y programar un <strong>semáforo con pulsador para peatones</strong>, como los de los pasos de cebra: está en verde y, cuando alguien pulsa el botón, pasa a amarillo, después a rojo y vuelve a verde.</p>
+<p>Todo se hace en <strong>TinkerCAD</strong>, un simulador: montas el circuito y lo pruebas en la pantalla, sin componentes de verdad. El programa se hace con <strong>bloques</strong>.</p>
+<ul>
+<li><strong>Tiempo:</strong> unas 3 o 4 horas. Puedes hacerlo en varios ratos: TinkerCAD guarda tu trabajo solo.</li>
+<li><strong>Qué necesitas:</strong> un ordenador con internet y tu usuario IdEA.</li>
+<li><strong>Qué entregas:</strong> el documento de la tarea de Classroom, con tres capturas y unas respuestas cortas.</li>
+</ul></div>
+<h2>Paso a paso</h2>
+<h3>Paso 1 · Entra en la clase de TinkerCAD</h3>
+<ol>
+<li>Abre el enlace de la clase: <a href="https://www.tinkercad.com/joinclass/TUAKFBXTS" rel="noopener" target="_blank">clase de TinkerCAD de la recuperación</a>.</li>
+<li>Verás «Te damos la bienvenida a PENDIENTE CYR 3º». Pulsa <strong>«Unirte con el inicio de sesión de estudiante»</strong>.</li>
+<li>Escribe tu <strong>usuario IdEA</strong> (el mismo de Classroom, pero sin la parte <code>@g.educaand.es</code>) y pulsa <strong>«Ir a mi clase»</strong>.</li>
+</ol>
+<p style="text-align:center"><img alt="Pantalla de TinkerCAD para unirse a una clase, con el botón «Unirte con el inicio de sesión de estudiante» rodeado en rojo." src="../content/resources/s2_unirse_clase_1.png" style="max-width:420px"/></p>
+<p style="text-align:center"><img alt="Pantalla de TinkerCAD con el cuadro para escribir el usuario de estudiante y el botón «Ir a mi clase»." src="../content/resources/s2_unirse_clase_2.png" style="max-width:420px"/></p>
+<p>Guarda el enlace de la clase: lo necesitarás cada vez que vuelvas a entrar.</p>
+<h3>Paso 2 · Crea el circuito y pon el pulsador</h3>
+<ol>
+<li>Pulsa <strong>«+ Crear»</strong> y elige <strong>«Circuitos»</strong>. Se abre un circuito vacío con un nombre inventado: haz clic en ese nombre, arriba a la izquierda, y escribe <code>Semáforo</code>.</li>
+<li>En el panel de la derecha, abre el desplegable de arriba (pone «Componentes · Básico») y elige <strong>Starters → «Arduino»</strong>.</li>
+<li>Arrastra el starter <strong>«Botón»</strong> al área de trabajo. Trae ya una placa <strong>Arduino</strong> con un <strong>pulsador</strong> conectado al <strong>pin 2</strong> con su resistencia, y un programa de ejemplo.</li>
+<li>Vuelve a abrir el desplegable y elige <strong>Componentes → «Básico»</strong>. Arrastra una <strong>«Placa de pruebas pequeña»</strong> junto al Arduino.</li>
+</ol>
+<h3>Paso 3 · Monta las tres luces</h3>
+<p>Cada luz es un <strong>LED con su resistencia de 220 Ω</strong>, conectado a un pin del Arduino. Así se monta una, la del pin 13:</p>
+<p style="text-align:center"><img alt="Montaje en TinkerCAD: un cable va del pin 13 a la placa de pruebas, sigue una resistencia de 220 ohmios hasta la patilla larga del LED, y la patilla corta del LED vuelve a GND." src="../content/resources/s4_gemelo_pin13.png" style="max-width:360px"/></p>
+<p style="text-align:center"><a href="../content/resources/s4_gemelo_pin13.png" rel="noopener" target="_blank">Ampliar imagen (nueva pestaña)</a></p>
+<p>Monta tres, una para cada color:</p>
+<table class="tabla-datos">
+<thead><tr><th>Luz</th><th>Color del LED</th><th>Pin del Arduino</th></tr></thead>
+<tbody>
+<tr><td>Roja</td><td>Rojo</td><td>13</td></tr>
+<tr><td>Amarilla</td><td>Amarillo</td><td>12</td></tr>
+<tr><td>Verde</td><td>Verde</td><td>11</td></tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Color del LED:</strong> haz clic en el LED y, en el recuadro que aparece, cambia <strong>«Color»</strong>.</li>
+<li><strong>Valor de la resistencia:</strong> haz clic en ella y, en <strong>«Resistencia»</strong>, escribe <code>220</code> y elige <strong>Ω</strong> en las unidades.</li>
+<li><strong>Cables:</strong> haz clic en un punto y después en el otro. La patilla larga del LED (la doblada) va hacia la resistencia y el pin; la corta, hacia GND.</li>
+</ul>
+<div class="marco marco-nota"><p class="marco-titulo">Si una luz no se enciende, repasa</p>
+<ul>
+<li>Las dos patillas de un componente van en <strong>columnas distintas</strong> de la placa de pruebas, nunca en la misma.</li>
+<li>El LED está en el sentido correcto: patilla larga hacia el pin, corta hacia GND.</li>
+<li>Cada LED tiene su resistencia de 220 Ω.</li>
+</ul></div>
+<h3>Paso 4 · Programa el semáforo</h3>
+<ol>
+<li>Pulsa <strong>«Código»</strong> (arriba). Verás en bloques el programa que trae el starter: dentro de <strong>«siempre»</strong> lee el pulsador con <strong>«leer pin digital 2»</strong> y, con <strong>«si … entonces / si no»</strong>, hace una cosa cuando está pulsado (vale ALTA) y otra cuando no.</li>
+<li>Quita los dos bloques <strong>«definir LED integrado en …»</strong>: arrástralos a la papelera, abajo a la derecha. Los bloques grises de comentario puedes dejarlos o quitarlos.</li>
+<li><strong>Cuando nadie pulsa</strong> (dentro de <strong>«si no»</strong>): con el bloque <strong>«definir pin … en …»</strong> de la categoría <strong>«Salida»</strong>, pon el verde (pin 11) en <strong>ALTA</strong> y el amarillo (12) y el rojo (13) en <strong>BAJA</strong>.</li>
+<li><strong>Cuando alguien pulsa</strong> (dentro de <strong>«entonces»</strong>): con <strong>«definir pin … en …»</strong> y con <strong>«esperar … segundos»</strong> (categoría <strong>«Control»</strong>), haz esta secuencia: se apaga el verde, se enciende el amarillo durante 2 segundos, se apaga, se enciende el rojo durante 5 segundos y se apaga.</li>
+</ol>
+<p>Piensa bien el orden de los bloques: el Arduino los hace de arriba abajo, uno detrás de otro.</p>
+<h3>Paso 5 · Pruébalo</h3>
+<ol>
+<li>Pulsa <strong>«Iniciar simulación»</strong>. Debe encenderse el verde.</li>
+<li>Haz clic sobre el pulsador. Debe pasar a amarillo, después a rojo y volver a verde.</li>
+<li>Para parar la simulación, vuelve a pulsar ese mismo botón de arriba.</li>
+</ol>
+<p>Si algo no va, comprueba primero los pines de la tabla del paso 3: el número del bloque tiene que coincidir con el pin al que conectaste cada luz.</p>
+<h3>Paso 6 · Haz las tres capturas</h3>
+<p>Haz una captura de pantalla de cada una de estas cosas (tecla <strong>Impr Pant</strong> o la herramienta de capturas de tu ordenador):</p>
+<ol>
+<li><strong>El circuito</strong> completo, sin simular.</li>
+<li><strong>El programa</strong> de bloques, que se vea entero.</li>
+<li><strong>La simulación con el rojo encendido</strong>, después de pulsar. Tienes 5 segundos: pulsa y haz la captura enseguida.</li>
+</ol>
+<h2>Cómo entregar</h2>
+<ol>
+<li>Entra en Google Classroom, en la clase de la recuperación, y abre la tarea <strong>«Tarea 2 · Mi primer sistema automático»</strong>.</li>
+<li>Abre el documento que trae la tarea: ya es tu copia.</li>
+<li>Pega las tres capturas donde indica (<em>Insertar → Imagen → Subir desde el ordenador</em>) y responde a las preguntas.</li>
+<li>Pulsa «Entregar».</li>
+</ol>
+<p>Después recibirás comentarios. Si quieres mejorar tu trabajo, puedes hacerlo mientras la tarea siga abierta: pulsa «Anular entrega», cambia lo que haga falta en el documento y vuelve a pulsar «Entregar».</p>
+<p>¿Tienes dudas? Escríbelas en un <strong>comentario privado</strong> dentro de la tarea.</p>
+<h2>Cómo se califica</h2>
+<p>Esta tarea cuenta para tres aprendizajes. Cada uno tiene su propia nota, de 0 a 10.</p>
+<table class="tabla-datos">
+<thead><tr><th>Aprendizaje</th><th>En qué se fija quien corrige</th></tr></thead>
+<tbody>
+<tr><td><strong>Conocer los componentes</strong></td><td>La tabla de componentes del documento está completa.<br/>Dices bien qué es cada uno: entrada, salida o el que controla.<br/>Explicas para qué sirve cada uno en tu semáforo.</td></tr>
+<tr><td><strong>Programar</strong></td><td>El programa lee el pulsador y usa «si … entonces / si no».<br/>La secuencia es la correcta: verde, amarillo, rojo y otra vez verde.<br/>Los tiempos son los pedidos.<br/>Explicas con tus palabras qué hace tu programa.</td></tr>
+<tr><td><strong>Construir y probar el sistema</strong></td><td>Las tres luces están montadas, cada una con su resistencia y en su pin.<br/>El circuito funciona en la simulación: se ve en la captura con el rojo encendido.</td></tr>
+</tbody>
+</table></div>
+</div></article>
+</div></main>
+<div class="nav-buttons"><a href="mi-guia-de-supervivencia-digital.html" class="nav-button nav-button-left"><span>Anterior</span></a><a href="ensena-a-la-maquina.html" class="nav-button nav-button-right"><span>Siguiente</span></a></div>
+<footer id="siteFooter"><div id="siteFooterContent">
+<div id="packageLicense" class="cc cc-by-sa"><p><span class="license-label">Licencia: </span>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">Creative Commons: Reconocimiento - compartir igual 4.0</a></p></div>
+</div></footer>
+</div>
+</body></html>
