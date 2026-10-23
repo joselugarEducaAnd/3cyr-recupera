@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Mi guía de supervivencia digital</title>
+<style>
+  /* PASO A: CAMBIA estos colores por los que tú elijas */
+  body {
+    background-color: #f4f2fb;   /* color de fondo de la página */
+    color: #24262e;              /* color del texto */
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  h1 {
+    color: #453f93;              /* color del título grande */
+    text-align: center;
+  }
+  h2 {
+    color: #453f93;              /* color del título de cada consejo */
+  }
+  .consejo {
+    background-color: white;
+    border-left: 6px solid #453f93;   /* color de la raya de la izquierda */
+    padding: 10px 16px;
+    margin-bottom: 14px;
+  }
+</style>
+</head>
+<body>
+
+<!-- PASO B: CAMBIA el título y la frase de presentación -->
+<h1>Mi guía de supervivencia digital</h1>
+<p>Escribe aquí para quién es esta guía y qué va a aprender quien la lea.</p>
+
+<!-- Consejo 1. Tema: CONTRASEÑAS -->
+<div class="consejo">
+  <h2>Consejo 1: escribe aquí el título del consejo</h2>
+  <p><strong>Qué hacer:</strong> escribe aquí qué tiene que hacer quien lea tu guía.</p>
+  <p><strong>Por qué:</strong> escribe aquí de qué peligro le protege.</p>
+</div>
+
+<!-- Consejo 2. Tema: VERIFICACIÓN EN DOS PASOS (doble factor) -->
+<div class="consejo">
+  <h2>Consejo 2: escribe aquí el título del consejo</h2>
+  <p><strong>Qué hacer:</strong> escribe aquí qué tiene que hacer quien lea tu guía.</p>
+  <p><strong>Por qué:</strong> escribe aquí de qué peligro le protege.</p>
+</div>
+
+<!-- Consejo 3. Tema: VIRUS Y OTRO MALWARE (actualizaciones, antivirus, descargas) -->
+<div class="consejo">
+  <h2>Consejo 3: escribe aquí el título del consejo</h2>
+  <p><strong>Qué hacer:</strong> escribe aquí qué tiene que hacer quien lea tu guía.</p>
+  <p><strong>Por qué:</strong> escribe aquí de qué peligro le protege.</p>
+</div>
+
+<!-- Consejo 4. Tema: PHISHING (mensajes y correos trampa) -->
+<div class="consejo">
+  <h2>Consejo 4: escribe aquí el título del consejo</h2>
+  <p><strong>Qué hacer:</strong> escribe aquí qué tiene que hacer quien lea tu guía.</p>
+  <p><strong>Por qué:</strong> escribe aquí de qué peligro le protege.</p>
+</div>
+
+<!-- Consejo 5. Tema: PRIVACIDAD EN REDES SOCIALES (lo que publicas y quién lo ve) -->
+<div class="consejo">
+  <h2>Consejo 5: escribe aquí el título del consejo</h2>
+  <p><strong>Qué hacer:</strong> escribe aquí qué tiene que hacer quien lea tu guía.</p>
+  <p><strong>Por qué:</strong> escribe aquí de qué peligro le protege.</p>
+</div>
+
+<!-- PASO C: AÑADE aquí abajo un enlace a una web donde pedir ayuda -->
+
+</body>
+</html>

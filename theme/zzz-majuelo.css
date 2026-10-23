@@ -1,0 +1,485 @@
+/* ============================================================
+   ESTILO IES EL MAJUELO — eXeLearning 4  ·  ESTILO ÚNICO (v3)
+   Override sobre el tema Base. Se carga tras style.css ("zzz-").
+   ------------------------------------------------------------
+   ARQUITECTURA EN 3 CAPAS
+   1) SEMÁNTICA DE CONTENIDO (invariante): el color = el tipo de
+      contenido, igual en toda SdA y nivel. Clases .bloque-* (y los
+      .marco-* heredados como alias).
+   2) CHROME por SdA (variable): color de título, encabezados,
+      cabecera de tabla y barra lateral. Da identidad a la unidad
+      (wayfinding). Se elige del BANCO DE CHROMES de más abajo.
+   3) INTENSIDAD (opcional): grosor/tinte/radio de los bloques.
+      Sobrio por defecto (Bach); una SdA de ESO sube la intensidad.
+   Regla de oro: no repintar la semántica; solo cambia el chrome.
+   ============================================================ */
+
+:root {
+  /* ---------- Neutros y tipografía ---------- */
+  --maj-texto:  #24262e;
+  --maj-texto-2:#5a5f6b;
+  --maj-linea:  #e4e6eb;
+  --maj-fuente: system-ui, -apple-system, "Segoe UI", Roboto,
+                "Helvetica Neue", Arial, sans-serif;
+  --maj-medida: 70ch;
+  --maj-radio-s:6px;
+
+  /* ---------- CAPA 2 · CHROME (por SdA) ----------
+     Activo = "Pizarra" (SdA Materiales). Para cambiar la identidad
+     de una unidad, sobrescribe estas 4 variables (BANCO abajo). */
+  --chrome:       #22425c;   /* título, h2, cabecera de tabla, nav activo */
+  --chrome-osc:   #163049;   /* hover / botón */
+  --chrome-tinte: #eaeef2;   /* zebra de tabla, fondo nav */
+  --chrome-linea: #cdd6de;   /* filetes suaves del chrome */
+
+  /* ---------- CAPA 3 · INTENSIDAD (sobrio por defecto) ---------- */
+  --blk-bw:    1.5px;        /* grosor del marco de los bloques */
+  --blk-radio: 10px;
+  --blk-pad:   14px 18px 14px 24px;   /* + aire a la izquierda (separa del acento) */
+
+  /* ---------- CAPA 1 · SEMÁNTICA (acento · tinte · tinta título) ----
+     color = tipo de contenido. NO cambiar entre SdAs/niveles. */
+  --sem-teoria:     #453f93; --sem-teoria-bg:   #f5f3fc; --sem-teoria-tx:   #3a2f6b;
+  --sem-actividad:  #2f6fb0; --sem-actividad-bg:#eef4fb; --sem-actividad-tx:#1b4d7e;
+  --sem-resuelto:   #0f8a8f; --sem-resuelto-bg: #e7f5f5; --sem-resuelto-tx: #0b5b5f;
+  --sem-pdf:        #b23b3b; --sem-pdf-bg:      #f9efee; --sem-pdf-tx:      #8a2b2b;
+  --sem-formula:    #e67e22; --sem-formula-bg:  #fef6ec; --sem-formula-tx:  #8a4f12;
+  --sem-dua:        #9b4a86; --sem-dua-bg:      #f7eef4; --sem-dua-tx:      #6e2f5f;
+  --sem-nota:       #2a7d4f; --sem-nota-bg:     #eef8f1; --sem-nota-tx:     #1d5636;
+
+  /* Valores por defecto del bloque = teoría (los sobrescribe cada tipo) */
+  --c:  var(--sem-teoria); --bg: var(--sem-teoria-bg); --tx: var(--sem-teoria-tx);
+}
+
+/* ============================================================
+   BANCO DE CHROMES  (copia uno en el snippet por SdA)
+   Para asignar identidad a una unidad, define en su material:
+     .exe-content { --chrome:#..; --chrome-osc:#..; --chrome-tinte:#..; --chrome-linea:#..; }
+   ------------------------------------------------------------
+   Pizarra   #22425c · osc #163049 · tinte #eaeef2 · línea #cdd6de
+   Ciruela   #5b2a63 · osc #401d47 · tinte #f0eaf2 · línea #dcc9e0
+   Bosque    #2c6046 · osc #1d4531 · tinte #e8f0eb · línea #c6dccd
+   Bronce    #8a4b2a · osc #66371e · tinte #f3ebe5 · línea #e2d0c4
+   Índigo    #3b3a7a · osc #2a295a · tinte #ecebf5 · línea #d0cfe6
+   Teal-osc. #0e5a63 · osc #084049 · tinte #e6f1f2 · línea #c3dde0
+   (Evita azul, verde, granate, teal-medio, morado y naranja: son
+    colores de la CAPA 1 y no deben confundirse con el chrome.)
+   ============================================================ */
+
+/* ---------- Base del contenido ---------- */
+.exe-content { font-family: var(--maj-fuente); color: var(--maj-texto); line-height: 1.65; }
+.exe-content .page-content > p,
+.exe-content .page-content > ul,
+.exe-content .page-content > ol { max-width: var(--maj-medida); }
+.exe-content .page-content li { margin: .25em 0; }
+
+/* ---------- Enlaces (siguen el chrome de la unidad) ---------- */
+.exe-content a { color: var(--chrome); text-underline-offset: .12em; }
+.exe-content a:hover, .exe-content a:focus { color: var(--chrome-osc); }
+.exe-content a:focus-visible { outline: 2px solid var(--chrome); outline-offset: 2px; border-radius: 2px; }
+
+/* ============================================================
+   ENCABEZADOS  (jerarquía: chrome arriba, tinta en h3)
+   ============================================================ */
+.exe-content .package-title { color: var(--chrome); font-weight: 700; }
+.exe-content .page-title {
+  color: var(--chrome); font-weight: 800; font-size: 1.9rem;
+  line-height: 1.2; letter-spacing: -0.01em;
+  border-left: 6px solid var(--chrome); padding-left: .55em; margin: .1em 0 .9em;
+}
+.exe-content h1, .exe-content h2, .exe-content h3, .exe-content h4, .exe-content h5 { color: var(--chrome); }
+
+/* ------------------------------------------------------------
+   ESCALA DE ENCABEZADOS DENTRO DEL BLOQUE  (2026-08-21)
+   El título del bloque es el techo: nada del CONTENIDO puede verse más grande.
+   Medido en el navegador, no supuesto —esto se falló dos veces por suponerlo—:
+     · `.exe-content .box-title` del tema base dice 1,5rem, PERO gana `base.css` con
+       `.exe-content .box-head .box-title { font-size: 1.2em }` (más específico): el título
+       de bloque salía a 19,2 px y encima con peso 500.
+     · el `<h1>` del contenido no tenía regla en este tema y caía en el 2rem del navegador.
+   Resultado: una subsección se veía más grande y más gruesa que el bloque que la contiene.
+   El tema toma ahora el control del título de bloque (con la misma especificidad que
+   `base.css`, por eso el selector lleva `.box-head`) y fija la escala completa:
+     page-title 1,90 > box-title 1,55 > h1 1,35 > h2 1,22 > h3 1,12 > h5 1,00 > h4 0,82
+   (h4 es un antetítulo en versalitas y por eso va el último a propósito).
+   Al tocar esto, MEDIR con `getComputedStyle` en el export real, no leer el CSS.
+   ------------------------------------------------------------ */
+.exe-content .box-head .box-title,
+.exe-content .box-title {
+  font-size: 1.55rem; font-weight: 700; line-height: 1.25; color: var(--chrome);
+}
+.exe-content h1:not(.page-title):not(.box-title):not(.package-title) {
+  font-size: 1.35rem; font-weight: 700; line-height: 1.25;
+  margin: 1.8em 0 .6em; padding-bottom: .28em; border-bottom: 1px solid var(--chrome-linea);
+}
+.exe-content h2 {
+  font-size: 1.22rem; font-weight: 700; line-height: 1.25;
+  margin: 1.8em 0 .6em; padding-bottom: .28em; border-bottom: 1px solid var(--chrome-linea);
+}
+.exe-content h3 { font-size: 1.12rem; font-weight: 700; line-height: 1.3; margin: 1.5em 0 .5em; color: var(--maj-texto); }
+.exe-content h4 { font-size: .82rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin: 1.4em 0 .4em; }
+.exe-content h5 { font-size: 1rem; font-weight: 700; }
+
+/* ============================================================
+   MENÚ LATERAL
+   ============================================================ */
+#siteNav {
+  background: url("img/logo-majuelo.png") top 14px center / 132px auto no-repeat,
+              var(--chrome-tinte);
+  padding-top: 170px;   /* hueco para el logo (132px + gap) sobre el menú */
+}
+.exe-web-site .exe-content {
+  box-shadow: inset 300px 0 0 0 var(--chrome-tinte), inset 301px 0 0 0 var(--chrome-linea);
+}
+#siteNav a { color: #2b2f38; border-radius: var(--maj-radio-s); }
+#siteNav a:hover { background: #fff; }
+#siteNav a.active {
+  color: var(--chrome); background: #fff; font-weight: 700;
+  box-shadow: inset 3px 0 0 0 var(--chrome);
+}
+#siteNav a.highlighted-link { color: var(--chrome); background: #fff; }
+/* Menú fijo con scroll propio (2026-08-14, DOCA-015). El checkNav() del tema
+   base mide solo el <ul> (+50px) y no cuenta el padding-top de 170px del logo
+   Majuelo: con muchas páginas fija un menú más alto que la ventana y las
+   últimas entradas quedaban inalcanzables (visto en la SdA05 de 1º TECI, 18
+   páginas). Verificado en navegador: sin esta regla la última entrada no se
+   alcanza ni scrolleando la página; con ella el menú scrollea por dentro. */
+#sidebar-nav.fixed #siteNav {
+  max-height: 100vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+@media (max-width: 767.98px) {
+  .exe-web-site .exe-content {
+    box-shadow: inset 251px 0 0 0 var(--chrome-tinte), inset 252px 0 0 0 var(--chrome-linea);
+  }
+  /* Sidebar más estrecha en móvil: logo más pequeño y menos hueco.
+     ⚠️ Pendiente de revisar sobre un export real (no rompe el drawer,
+     pero confirmar que no empuja el menú fuera de la vista). */
+  #siteNav {
+    background: url("img/logo-majuelo.png") top 10px center / 100px auto no-repeat,
+                var(--chrome-tinte);
+    padding-top: 128px;
+  }
+}
+
+/* ---------- Botones de navegación / togglers / búsqueda ---------- */
+.nav-buttons .nav-button, button.toggler, #exe-client-search-submit { background-color: var(--chrome); }
+.nav-buttons a:hover, .nav-buttons a:focus,
+button.toggler:hover, button.toggler:focus,
+#exe-client-search-submit:hover, #exe-client-search-submit:focus { background-color: var(--chrome-osc); }
+/* ------------------------------------------------------------
+   BOTONES DE DESCARGA DEL CONTENIDO  (2026-08-27, DOCA-052)
+   El tema fijaba el FONDO de `.btn-primary` pero no el color del texto, y
+   `.exe-content a { color: var(--chrome) }` (clase + elemento) gana por
+   especificidad al `color:#fff` de Bootstrap (clase sola). Resultado medido con
+   getComputedStyle en el export real: texto #3a2f6b sobre fondo #3d6694, es
+   decir 1,96:1 — WCAG AA pide 4,5:1. El botón se leía a duras penas.
+   `.btn-outline-primary` no estaba contemplado y salía con el azul de Bootstrap
+   (#0d6efd), ajeno al chrome de la unidad.
+   El blanco es seguro en los SIETE chromes en uso: el más claro (#817431) da
+   4,69:1 y el más oscuro (#22425c) 10,49:1. Medido sobre los 26 .elpx, no supuesto.
+   `text-decoration:none` porque un botón no se subraya: el subrayado venía de
+   la regla de enlaces de arriba.
+   ------------------------------------------------------------ */
+.exe-content .btn-primary {
+  background-color: var(--chrome); border-color: var(--chrome-osc);
+  color: #fff; text-decoration: none;
+}
+.exe-content .btn-primary:hover, .exe-content .btn-primary:focus,
+.exe-content .btn-primary:visited {
+  background-color: var(--chrome-osc); border-color: var(--chrome-osc); color: #fff;
+}
+.exe-content .btn-outline-primary {
+  color: var(--chrome); border-color: var(--chrome); text-decoration: none;
+}
+.exe-content .btn-outline-primary:hover, .exe-content .btn-outline-primary:focus {
+  background-color: var(--chrome); border-color: var(--chrome); color: #fff;
+}
+#teacher-mode-toggler.form-check-input:checked { background-color: var(--chrome); border-color: var(--chrome); }
+.exe-content .box-title { color: var(--chrome); }
+.exe-export .box .box-content { border-color: var(--chrome-linea); border-radius: var(--blk-radio); }
+
+/* ============================================================
+   TABLAS DE DATOS  →  clase .tabla-datos  (NO afecta a cajas de
+   fórmula ni a tablas de maquetación, que no llevan la clase)
+   ============================================================ */
+.exe-content table.tabla-datos {
+  border-collapse: collapse; width: 100%; margin: 1.3em 0; font-size: .97em;
+  border-radius: var(--maj-radio-s); overflow: hidden;
+}
+.exe-content table.tabla-datos th {
+  background: var(--chrome); color: #fff; font-weight: 600; text-align: left; padding: .55em .8em;
+}
+.exe-content table.tabla-datos td { padding: .55em .8em; border: 0; border-bottom: 1px solid var(--maj-linea); }
+.exe-content table.tabla-datos tbody tr:nth-child(even) { background: var(--chrome-tinte); }
+.exe-content table.tabla-datos tbody tr:hover { background: var(--chrome-linea); }
+
+/* ---------- Imágenes / figuras ---------- */
+.exe-content .page-content img { max-width: 100%; height: auto; border-radius: var(--maj-radio-s); }
+.exe-content figure { margin: 1.4em 0; }
+.exe-content figure img { border: 1px solid var(--maj-linea); box-shadow: 0 1px 3px rgba(20,20,40,.06); }
+.exe-content figure figcaption { color: var(--maj-texto-2); font-size: .88em; margin-top: .5em; text-align: center; }
+
+/* ============================================================
+   CAPA 1 · BLOQUES SEMÁNTICOS  (marco COMPLETO, con icono-punto)
+   Uso en el iDevice de texto (vista HTML):
+     <div class="bloque bloque-actividad">
+       <p class="bloque-titulo">Actividad</p>
+       <p>…</p>
+     </div>
+   Alias heredado: .marco / .marco-titulo / .marco-<tipo> siguen valiendo.
+   ============================================================ */
+.exe-content .bloque,
+.exe-content .marco,
+.exe-content [class*="bloque-"]:not([class*="titulo"]),
+.exe-content [class*="marco-"]:not([class*="titulo"]) {
+  background: var(--bg);
+  border: var(--blk-bw) solid var(--c);
+  border-radius: var(--blk-radio);
+  padding: var(--blk-pad);
+  margin: 1.5em auto;   /* centrado: ancho de lectura pero centrado en la columna */
+  max-width: var(--maj-medida);
+}
+.exe-content .bloque > :last-child,
+.exe-content .marco  > :last-child,
+.exe-content [class*="bloque-"]:not([class*="titulo"]) > :last-child,
+.exe-content [class*="marco-"]:not([class*="titulo"]) > :last-child { margin-bottom: 0; }
+.exe-content .bloque-titulo,
+.exe-content .marco-titulo {
+  margin: 0 0 .5em; font-weight: 700; color: var(--tx);
+  display: flex; align-items: center; gap: .5em;
+}
+.exe-content .bloque-titulo::before,
+.exe-content .marco-titulo::before {
+  content: ""; flex: 0 0 auto; width: .62em; height: .62em; border-radius: 50%; background: var(--c);
+}
+/* Los enlaces DE TEXTO dentro de un marco toman el color del marco. Los BOTONES
+   no: llevan su propio fondo y necesitan su propio color de texto. Sin el
+   `:not(.btn)` esta regla (0,2,1) le ganaba a `.exe-content .btn-primary`
+   (0,2,0) y pintaba el texto del botón del color del marco sobre el fondo del
+   chrome — 1,96:1 medido en el export. (2026-08-27, DOCA-052) */
+.exe-content [class*="bloque-"] a:not(.btn),
+.exe-content [class*="marco-"] a:not(.btn) { color: var(--tx); }
+
+/* Teoría — morado */
+.exe-content .bloque-teoria, .exe-content .marco-teoria { --c: var(--sem-teoria); --bg: var(--sem-teoria-bg); --tx: var(--sem-teoria-tx); }
+/* Actividad / entrega — azul (color ancla del alumnado) */
+.exe-content .bloque-actividad, .exe-content .marco-actividad { --c: var(--sem-actividad); --bg: var(--sem-actividad-bg); --tx: var(--sem-actividad-tx); }
+/* Ejemplo resuelto / práctica guiada — teal */
+.exe-content .bloque-resuelto { --c: var(--sem-resuelto); --bg: var(--sem-resuelto-bg); --tx: var(--sem-resuelto-tx); }
+/* Descarga PDF — granate */
+.exe-content .bloque-pdf { --c: var(--sem-pdf); --bg: var(--sem-pdf-bg); --tx: var(--sem-pdf-tx); }
+/* Fórmula / clave — naranja */
+.exe-content .bloque-formula, .exe-content .marco-formula { --c: var(--sem-formula); --bg: var(--sem-formula-bg); --tx: var(--sem-formula-tx); }
+.exe-content .bloque-formula p, .exe-content .marco-formula p { font-size: 1.05em; }
+/* ------------------------------------------------------------
+   ANCHO DE LOS MARCOS Y FIGURAS FLOTADAS  (2026-08-21)
+   Dos síntomas con la misma raíz: un marco es un bloque normal, y un bloque
+   normal NO respeta un `float` —solo lo esquivan sus líneas de texto—.
+   1) El marco de FÓRMULA salía tan ancho como el texto: un `W = F·s` dentro de
+      una caja de 70ch parece un error de maqueta. `display: table` lo encoge a
+      su contenido.
+   2) Cualquier marco colocado junto a una figura `float-right` se metía DEBAJO
+      de la figura y quedaba tapado. `display: table` y `display: flow-root`
+      crean contexto de formato: el marco se coloca AL LADO del flotado y, si no
+      cabe, baja entero. Ninguna de las dos propiedades cambia el aspecto.
+   Los selectores repiten la forma de la regla general —clase + atributo +
+   `:not`— para igualar su especificidad y ganar por orden.
+   ------------------------------------------------------------ */
+.exe-content [class*="bloque-formula"]:not([class*="titulo"]),
+.exe-content [class*="marco-formula"]:not([class*="titulo"]) {
+  display: table;              /* se encoge a la fórmula y respeta los flotados */
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.exe-content [class*="bloque-"]:not([class*="titulo"]):not([class*="formula"]),
+.exe-content [class*="marco-"]:not([class*="titulo"]):not([class*="formula"]) {
+  display: flow-root;          /* ancho de lectura, pero sin meterse bajo la figura */
+}
+/* DUA · ampliación / refuerzo — ciruela */
+.exe-content .bloque-dua { --c: var(--sem-dua); --bg: var(--sem-dua-bg); --tx: var(--sem-dua-tx); }
+/* Nota / aviso — verde */
+.exe-content .bloque-nota, .exe-content .marco-nota { --c: var(--sem-nota); --bg: var(--sem-nota-bg); --tx: var(--sem-nota-tx); }
+
+/* ---------- Accesibilidad / movimiento ---------- */
+@media (prefers-reduced-motion: reduce) { .exe-content * { transition: none !important; } }
+
+/* ============================================================
+   Ajustes 2026-07-07 (petición de Pepe)
+   1) Centrado por defecto de imágenes y recuadros.
+   2) Si una clase semántica (.bloque-*) va sobre un iDevice DENTRO de una caja,
+      el acento se lleva a la CAJA exterior (no un marco anidado).
+   3) Teoría: solo borde, sin fondo (para no cargar).
+   ============================================================ */
+
+/* 1) Centrado por defecto de imágenes y recuadros */
+.exe-content .box-content img,
+.exe-content .page-content img { display: block; margin-left: auto; margin-right: auto; }
+.exe-content .bloque, .exe-content .marco,
+.exe-content [class*="bloque-"]:not([class*="titulo"]),
+.exe-content [class*="marco-"]:not([class*="titulo"]) { margin-left: auto; margin-right: auto; }
+
+/* 2) Marco semántico sobre un iDevice de caja -> se neutraliza el marco interno
+      y el acento pasa a la caja exterior (.box). Los marcos "de contenido"
+      (p. ej. cap 5, dentro del texto) van más adentro y NO se ven afectados. */
+.exe-content .box-content > .idevice_node.bloque {
+  background: none; border: none; border-radius: 0; padding: 0; margin: 0; max-width: none;
+}
+.exe-content article.box:has(> .box-content > .idevice_node.bloque-teoria) {
+  border-left: 4px solid var(--sem-teoria);         /* 3) teoría: solo borde, sin fondo */
+}
+.exe-content article.box:has(> .box-content > .idevice_node.bloque-resuelto) {
+  border-left: 4px solid var(--sem-resuelto); background: var(--sem-resuelto-bg);
+}
+.exe-content article.box:has(> .box-content > .idevice_node.bloque-pdf) {
+  border-left: 4px solid var(--sem-pdf); background: var(--sem-pdf-bg);
+}
+
+/* ============================================================
+   Ajuste fino 2026-07-07b (petición de Pepe)
+   - Aire a la izquierda en las cabeceras de sección.
+   - Número/pestaña activa del paginador: fondo morado Majuelo + texto blanco
+     (antes el color del tema pisaba el blanco -> texto oscuro sobre fondo oscuro).
+   ============================================================ */
+.exe-content .box-head { padding-left: 20px; padding-right: 20px; }
+.exe-content .exe-paginated .fx-pagination .fx-current a,
+.exe-content .exe-paginated .fx-pagination .fx-current a:hover,
+.exe-content .exe-paginated .fx-pagination .fx-current a:focus {
+  background: var(--chrome); color: #fff;
+}
+
+/* ==========================================================================
+   Ajustes 2026-10-06 (petición de Pepe · DOCA-064)
+   Fórmulas en bloque (MathJax) desplazables en pantallas estrechas.
+   - Por debajo de 1024 px una fórmula ancha se desplaza en horizontal dentro
+     de su propia caja en lugar de salirse de la columna y cortarse.
+   - Solo bajo 1024 px: en escritorio hay fórmulas junto a figuras flotantes
+     y la caja con overflow las bajaría bajo la figura (medido); a partir de
+     1024 px ninguna fórmula medida se sale.
+   - width:100% evita que una caja con overflow se encoja a 0 junto a una
+     imagen; el padding sustituye al margen para que el overflow-y:hidden no
+     recorte numeradores ni superíndices (MathJax dibuja fuera de la línea).
+   Validado: SdA 01, 03 y 04 de 2.º TECI a 390/768/1024/1280 px: 0 fórmulas
+   movidas, 0 ocultas, 0 recortes; todas las que se salían quedan desplazables.
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .exe-content mjx-container[display="true"] {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1.2em 0 .6em;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+/* ==========================================================================
+   Ajustes 2026-10-09 (petición de Pepe · DOCA-102)
+   Tablas de datos desplazables en pantallas estrechas.
+   - Una .tabla-datos que no cabe en la columna se CORTABA: la regla de arriba
+     le da overflow:hidden (para el radio de las esquinas) y las últimas
+     columnas quedaban fuera sin forma de verlas. Medido en la SdA 02 de
+     2.º TECI: la tabla resumen de ensayos (5 columnas) a 390 y 768 px, y la de
+     ventajas e inconvenientes del Brinell (2 columnas) ya a 390 px.
+   - Bajo 1024 px la tabla pasa a bloque con desplazamiento horizontal propio
+     (el mismo umbral que las fórmulas en bloque). La columna de contenido de
+     eXe con el menú abierto mide unos 390 px incluso con 768 px de pantalla.
+   - En escritorio no cambia nada (medido a 1025 y 1280 px: anchos idénticos).
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .exe-content table.tabla-datos {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ==========================================================================
+   Ajustes 2026-10-09 (2) · DOCA-102 — la fórmula enmarcada también se desplaza
+   - El ajuste del 2026-10-06 hace desplazable la fórmula en bloque bajo 1024 px,
+     pero dentro de un .marco-formula no actuaba: el marco es `display: table`,
+     crece con la fórmula y se sale de la columna (y el final de la fórmula se
+     corta). Bajo 1024 px el marco pasa a `flow-root`: sigue ajustándose a la
+     fórmula (width: fit-content) y respetando las figuras flotadas, pero ya no
+     pasa del 100 % y la fórmula se desplaza dentro.
+   Medido en las 7 unidades publicadas de 2.º TECI (126 marcos, exe-fx abiertos):
+   cortados 44 → 0 a 390 px, 27 → 0 a 768 px y 2 → 0 a 1024 px; 0 marcos bajo
+   una figura flotada; a 1280 px no cambia nada.
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .exe-content [class*="marco-formula"]:not([class*="titulo"]) {
+    display: flow-root;
+  }
+}
+
+/* ==========================================================================
+   Ajustes 2026-10-09 (3) · DOCA-102 — las páginas ya no se salen 59 px de ancho
+   - El texto oculto de los botones («Ocultar/Mostrar contenido» del plegado de
+     cajas, «Siguiente/Anterior»…) se esconde en style.css del tema base solo con
+     `clip`, que tapa el texto pero deja su caja entera: ~120 × 53 px colocados a
+     la derecha del botón, fuera de la columna. El navegador la cuenta y la página
+     entera se desplaza en horizontal (59 px en todos los sitios medidos).
+   - Se reduce esa caja a 1 × 1 px (patrón «solo para lectores de pantalla»): el
+     lector de pantalla sigue leyendo el texto y la página deja de desbordar.
+   Medido en las portadas de 8 sitios publicados a 390, 768 y 1280 px: exceso
+   59 → 0 en todos; los botones se ven igual.
+   ========================================================================== */
+.nav-buttons .nav-button span,
+.box-toggle span,
+#exe-client-search-reset span,
+#packageLicense .license-label {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Ajustes 2026-10-10 · DOCA-064 (DOCA-103) — pista visual en tablas desplazables
+   - Desde el 2026-10-09 una .tabla-datos que no cabe se desplaza en horizontal
+     bajo 1024 px, pero nada lo anuncia: en la tabla «Mapa de necesidades» de
+     4.º TEC (SdA 01) las columnas ocultas pasaban desapercibidas.
+   - zzz-majuelo.js marca con .mj-desliza SOLO las tablas que dejan contenido
+     fuera (más que el relleno de la celda) y les pone delante la línea
+     «Desliza para ver más columnas →» (p.mj-pista-desliza, aria-hidden) y
+     tabindex=0 para moverlas con teclado.
+   - El borde del lado con contenido oculto se difumina con mask-image: derecha
+     al inicio (.mj-inicio), ambos a mitad y solo izquierda al final (.mj-final).
+   - Foco visible con el color de chrome de la SdA.
+   - En escritorio no cambia nada: todo va bajo 1024 px y sin JS no hay clases.
+   Probado inyectado en 4.º TEC SdA 01 «Observar necesidades»: 390 px marca 2
+   tablas, 768 px 1, 1280 px 0; sin desbordamiento de página, 0 errores JS.
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .exe-content p.mj-pista-desliza {
+    margin: 1.3em 0 -.9em;
+    text-align: right;
+    font-size: .82em;
+    font-weight: 600;
+    color: var(--chrome);
+  }
+  .exe-content table.tabla-datos.mj-desliza {
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 44px), transparent);
+            mask-image: linear-gradient(to right, #000 calc(100% - 44px), transparent);
+  }
+  .exe-content table.tabla-datos.mj-desliza:not(.mj-inicio) {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 44px, #000 calc(100% - 44px), transparent);
+            mask-image: linear-gradient(to right, transparent, #000 44px, #000 calc(100% - 44px), transparent);
+  }
+  .exe-content table.tabla-datos.mj-desliza.mj-final {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 44px);
+            mask-image: linear-gradient(to right, transparent, #000 44px);
+  }
+  .exe-content table.tabla-datos.mj-desliza:focus-visible {
+    outline: 2px solid var(--chrome);
+    outline-offset: 2px;
+  }
+}

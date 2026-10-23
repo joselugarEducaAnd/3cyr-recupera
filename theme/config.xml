@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<theme>
+  <name>majuelo</name>
+  <title>IES El Majuelo</title>
+  <version>2026</version>
+  <compatibility>3.0</compatibility>
+  <author>Departamento de Tecnología — IES El Majuelo (derivado del tema «Base» de eXeLearning.net)</author>
+  <license>Creative Commons by-sa</license>
+  <license-url>http://creativecommons.org/licenses/by-sa/3.0/</license-url>
+  <description>Estilo del IES El Majuelo: morado corporativo #453f93 y azul #004a99, tipografía y tablas alineadas con los materiales Quarto del centro. Derivado del tema Base de eXeLearning. Iconos de iDevice por Francisco Javier Pulido Cuadrado.</description>
+  <downloadable>1</downloadable>
+</theme>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es" class="js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vista previa — Estilo IES El Majuelo v3 (estilo único, eXeLearning 4)</title>
+<style>
+/* ===== Subconjunto del tema BASE de eXeLearning 4 ===== */
+*{box-sizing:border-box}
+body.exe-export{padding:0;font-size:16px;line-height:1.5;margin:0}
+.exe-content{color:#333;background:#fff;font-family:sans-serif}
+.exe-web-site .exe-content{box-shadow:inset 300px 0 0 0 #f6f6f6, inset 301px 0 0 0 #f0f0f0;min-height:100vh}
+#siteNav{float:left;background:#f6f6f6;width:300px;padding:24px 8px}
+#siteNav ul{margin:0;padding:0;list-style:none}#siteNav li{margin:0 0 4px 0}
+#siteNav a{color:#000;display:block;padding:8px 15px;max-width:284px;text-decoration:none;transition:background-color .2s}
+#siteNav a.active{background:#fff;color:#d76b4a}#siteNav a:hover{background:#f2f2f2}
+#siteNav ul ul a{padding-left:32px;font-size:.95em}
+#siteNav .package-title{padding:0 15px;font-size:1.05rem;margin:0 0 1em}
+.exe-web-site main.page{padding:1.6em 34px 3em 336px}
+.exe-content .page-title{color:#078e8e;font-size:1.7rem;text-align:left;margin:.2em 0 .8em}
+.exe-content h2{font-size:1.4rem}.exe-content h3{font-size:1.15rem}.exe-content h4{font-size:1rem}
+.exe-content a{color:#d76b4a}
+.exe-content .box{margin:28px 0}.exe-content .box-title{color:#054d4d;font-size:1.3rem;margin:.2em 0}
+.exe-export .box .box-content{background:#f9f9f9;border:1px solid #ddd;padding:18px}
+.exe-content .btn-primary{display:inline-block;color:#fff;background:#066d6d;border:1px solid #066d6d;padding:9px 20px;border-radius:6px;text-decoration:none;font-weight:bold}
+table{width:auto}.exe-content figure{max-width:520px}
+
+/* ================= OVERRIDE MAJUELO v3 (zzz-majuelo.css) — embebido ================= */
+:root{
+ --maj-texto:#24262e;--maj-texto-2:#5a5f6b;--maj-linea:#e4e6eb;
+ --maj-fuente:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--maj-medida:70ch;--maj-radio-s:6px;
+ --chrome:#22425c;--chrome-osc:#163049;--chrome-tinte:#eaeef2;--chrome-linea:#cdd6de;
+ --blk-bw:1.5px;--blk-radio:10px;--blk-pad:13px 16px 13px 18px;
+ --sem-teoria:#453f93;--sem-teoria-bg:#f5f3fc;--sem-teoria-tx:#3a2f6b;
+ --sem-actividad:#2f6fb0;--sem-actividad-bg:#eef4fb;--sem-actividad-tx:#1b4d7e;
+ --sem-resuelto:#0f8a8f;--sem-resuelto-bg:#e7f5f5;--sem-resuelto-tx:#0b5b5f;
+ --sem-pdf:#b23b3b;--sem-pdf-bg:#f9efee;--sem-pdf-tx:#8a2b2b;
+ --sem-formula:#e67e22;--sem-formula-bg:#fef6ec;--sem-formula-tx:#8a4f12;
+ --sem-dua:#9b4a86;--sem-dua-bg:#f7eef4;--sem-dua-tx:#6e2f5f;
+ --sem-nota:#2a7d4f;--sem-nota-bg:#eef8f1;--sem-nota-tx:#1d5636;
+}
+.exe-content{font-family:var(--maj-fuente);color:var(--maj-texto);line-height:1.65}
+.exe-content .page-content>p,.exe-content .page-content>ul,.exe-content .page-content>ol{max-width:var(--maj-medida)}
+.exe-content .page-content li{margin:.25em 0}
+.exe-content a{color:var(--chrome);text-underline-offset:.12em}
+.exe-content a:hover{color:var(--chrome-osc)}
+.exe-content .package-title{color:var(--chrome);font-weight:700}
+.exe-content .page-title{color:var(--chrome);font-weight:800;font-size:1.9rem;line-height:1.2;letter-spacing:-.01em;border-left:6px solid var(--chrome);padding-left:.55em;margin:.1em 0 .9em}
+.exe-content h1,.exe-content h2,.exe-content h3,.exe-content h4,.exe-content h5{color:var(--chrome)}
+.exe-content h2{font-size:1.45rem;font-weight:700;line-height:1.25;margin:1.8em 0 .6em;padding-bottom:.28em;border-bottom:1px solid var(--chrome-linea)}
+.exe-content h3{font-size:1.18rem;font-weight:700;line-height:1.3;margin:1.5em 0 .5em;color:var(--maj-texto)}
+.exe-content h4{font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:1.4em 0 .4em}
+#siteNav{background:var(--chrome-tinte)}
+.exe-web-site .exe-content{box-shadow:inset 300px 0 0 0 var(--chrome-tinte),inset 301px 0 0 0 var(--chrome-linea)}
+#siteNav a{color:#2b2f38;border-radius:var(--maj-radio-s)}
+#siteNav a:hover{background:#fff}
+#siteNav a.active{color:var(--chrome);background:#fff;font-weight:700;box-shadow:inset 3px 0 0 0 var(--chrome)}
+.exe-content .btn-primary{background:var(--chrome);border-color:var(--chrome-osc)}
+.exe-content .box-title{color:var(--chrome)}
+.exe-content table.tabla-datos{border-collapse:collapse;width:100%;margin:1.3em 0;font-size:.97em;border-radius:var(--maj-radio-s);overflow:hidden}
+.exe-content table.tabla-datos th{background:var(--chrome);color:#fff;font-weight:600;text-align:left;padding:.55em .8em}
+.exe-content table.tabla-datos td{padding:.55em .8em;border:0;border-bottom:1px solid var(--maj-linea)}
+.exe-content table.tabla-datos tbody tr:nth-child(even){background:var(--chrome-tinte)}
+.exe-content table.tabla-datos tbody tr:hover{background:var(--chrome-linea)}
+.exe-content figure{margin:1.4em 0}.exe-content figure img{border:1px solid var(--maj-linea);box-shadow:0 1px 3px rgba(20,20,40,.06)}
+.exe-content figure figcaption{color:var(--maj-texto-2);font-size:.88em;margin-top:.5em;text-align:center}
+.exe-content .bloque,.exe-content .marco{--c:var(--sem-teoria);--bg:var(--sem-teoria-bg);--tx:var(--sem-teoria-tx);background:var(--bg);border:var(--blk-bw) solid var(--c);border-radius:var(--blk-radio);padding:var(--blk-pad);margin:1.5em 0;max-width:var(--maj-medida)}
+.exe-content .bloque>:last-child,.exe-content .marco>:last-child{margin-bottom:0}
+.exe-content .bloque-titulo,.exe-content .marco-titulo{margin:0 0 .5em;font-weight:700;color:var(--tx);display:flex;align-items:center;gap:.5em}
+.exe-content .bloque-titulo::before,.exe-content .marco-titulo::before{content:"";flex:0 0 auto;width:.62em;height:.62em;border-radius:50%;background:var(--c)}
+.exe-content .bloque a,.exe-content .marco a{color:var(--tx)}
+.exe-content .bloque-teoria,.exe-content .marco-teoria{--c:var(--sem-teoria);--bg:var(--sem-teoria-bg);--tx:var(--sem-teoria-tx)}
+.exe-content .bloque-actividad,.exe-content .marco-actividad{--c:var(--sem-actividad);--bg:var(--sem-actividad-bg);--tx:var(--sem-actividad-tx)}
+.exe-content .bloque-resuelto{--c:var(--sem-resuelto);--bg:var(--sem-resuelto-bg);--tx:var(--sem-resuelto-tx)}
+.exe-content .bloque-pdf{--c:var(--sem-pdf);--bg:var(--sem-pdf-bg);--tx:var(--sem-pdf-tx)}
+.exe-content .bloque-formula,.exe-content .marco-formula{--c:var(--sem-formula);--bg:var(--sem-formula-bg);--tx:var(--sem-formula-tx)}
+.exe-content .bloque-formula p,.exe-content .marco-formula p{font-size:1.05em}
+.exe-content .bloque-dua{--c:var(--sem-dua);--bg:var(--sem-dua-bg);--tx:var(--sem-dua-tx)}
+.exe-content .bloque-nota,.exe-content .marco-nota{--c:var(--sem-nota);--bg:var(--sem-nota-bg);--tx:var(--sem-nota-tx)}
+</style>
+</head>
+<body class="exe-export exe-web-site js">
+  <div id="node-content-container" class="exe-content">
+    <nav id="siteNav">
+      <p class="package-title">SdA · Materiales</p>
+      <ul>
+        <li><a class="active" href="#">2. Impacto ambiental</a></li>
+        <li><a href="#">1. Propiedades</a></li>
+        <li><a href="#">3. Ensayos de medida</a></li>
+      </ul>
+    </nav>
+    <main class="page">
+      <h1 class="page-title">2. Impacto social y ambiental</h1>
+      <div class="page-content">
+        <p>El chrome de esta unidad es <strong>Pizarra</strong>: tiñe título, encabezados,
+        cabecera de tabla y barra lateral. Los <a href="#">bloques de contenido</a> mantienen
+        su color semántico en cualquier unidad.</p>
+
+        <h2>Indicadores de impacto</h2>
+        <p>Para comparar materiales con objetividad se usan indicadores:</p>
+        <table class="tabla-datos" border="1" cellpadding="6">
+          <tbody>
+            <tr><th>Indicador</th><th>Qué mide</th><th>Unidad</th></tr>
+            <tr><td><strong>Energía embebida</strong></td><td>Energía para producir 1&nbsp;kg</td><td>MJ/kg</td></tr>
+            <tr><td><strong>Huella de carbono</strong></td><td>Gases de efecto invernadero</td><td>kg CO₂/kg</td></tr>
+            <tr><td><strong>Agua</strong></td><td>Agua dulce empleada</td><td>L/kg</td></tr>
+            <tr><td><strong>Reciclabilidad</strong></td><td>Facilidad de recuperar el material</td><td>% reciclable</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Bloques semánticos (marco completo)</h3>
+
+        <div class="bloque bloque-teoria"><p class="bloque-titulo">Teoría</p>
+          <p>La resistividad ρ es una propiedad característica de cada material.</p></div>
+
+        <div class="bloque bloque-actividad"><p class="bloque-titulo">Actividad · entrega</p>
+          <p>Elabora un informe de impacto de un material (1–2 páginas) y súbelo a la plataforma.</p></div>
+
+        <div class="bloque bloque-resuelto"><p class="bloque-titulo">Ejemplo resuelto</p>
+          <p>Caso resuelto paso a paso del aluminio frente al acero, para que lo imites.</p></div>
+
+        <div class="bloque bloque-pdf"><p class="bloque-titulo">Descarga PDF</p>
+          <p>Colección de ejercicios en PDF · <a href="#">descargar</a>.</p></div>
+
+        <div class="bloque bloque-formula"><p class="bloque-titulo">Fórmula</p>
+          <p>R = ρ · L / S</p></div>
+
+        <div class="bloque bloque-dua"><p class="bloque-titulo">Ampliación (DUA)</p>
+          <p>Si quieres ir más allá: analiza un material compuesto y su reciclabilidad real.</p></div>
+
+        <div class="bloque bloque-nota"><p class="bloque-titulo">Nota</p>
+          <p>Expresa siempre las magnitudes en unidades del SI antes de operar.</p></div>
+
+        <h3>iDevice con caja Base</h3>
+        <div class="box"><h3 class="box-title">Actividad (iDevice)</h3>
+          <div class="box-content"><p>La caja nativa del tema también recoge el chrome de la unidad.</p></div></div>
+        <p><a class="btn-primary" href="#">Botón primario</a></p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
